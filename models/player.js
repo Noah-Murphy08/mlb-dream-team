@@ -7,6 +7,14 @@ const playerSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    batSide: {
+        type: String,
+        required: true,
+    },
+    position: {
+        type: String,
+        required: true,
+    }
 })
 
 const Player = mongoose.model('Player', playerSchema)

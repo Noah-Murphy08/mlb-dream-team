@@ -6,6 +6,14 @@ const pitcherSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true,
+    },
+    throws: {
+        type: String,
+        required: true
+    },
+    pitchType: {
+        type: String,
+        required: true
     }
 })
 

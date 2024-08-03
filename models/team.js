@@ -17,14 +17,14 @@ const teamSchema = new mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
     },
-    player: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Player',
-    },
-    pitcher: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Pitcher',
-    }
+    // players: {
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: 'Player',
+    // },
+    // pitchers: {
+    //     type: mongoose.Schema.Types.ObjectId,
+    //     ref: 'Pitcher',
+    // }
 })
 
 
