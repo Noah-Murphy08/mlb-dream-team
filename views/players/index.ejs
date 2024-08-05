@@ -3,11 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Teams</title>
+    <title>View Position Players</title>
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
-    <h1>All Teams</h1>
+    <h1>Position Players</h1>
+    <ul>
+        <% populatedPlayers.forEach(player => { %>
+         <li>
+            <%= player.position %> <a href="/players/<%= player._id %>"><%= player.name %></a>
+         </li>
+        <% }) %>
+    </ul>
     <button type="submit">
         <a href="/players/new">Create a Position Player</a>
     </button>

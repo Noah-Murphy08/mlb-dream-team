@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>View Teams</title>
+    <title><%= player.name %></title>
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
-    <h1>All Teams</h1>
-    <button type="submit">
-        <a href="/players/new">Create a Position Player</a>
-    </button>
+    <h1><%= player.name %> Info</h1>
+    <p>Bats: <%= player.bats %></p>
+    <p>Position: <%= player.position %></p>
 </body>
 </html>
