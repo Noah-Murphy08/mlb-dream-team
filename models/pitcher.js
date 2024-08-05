@@ -11,9 +11,12 @@ const pitcherSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    pitchType: {
+    pitches: [{
         type: String,
-        required: true
+        required: true,
+    }],
+    starting: {
+        type: Boolean,
     }
 })
 

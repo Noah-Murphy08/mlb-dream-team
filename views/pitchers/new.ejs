@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a Pitcher</title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>Create a Pitcher</h1>
+    <form action="/pitchers" method="POST">
+        <label for="name">Name:</label><br>
+        <input type="text" name="name" id="name"><br>
+
+        <label for="throws">Throws:</label><br>
+        <select name="throws" id="throws">
+            <option value="Left">Left</option>
+            <option value="Right">Right</option>
+        </select><br>
+
+
+        <label for="pitches">Types of Pitches Thrown:</label><br>
+        <select name="pitches" id="pitches" multiple>
+            <option value="Fastball">Fastball</option>
+            <option value="Curveball">Curveball</option>
+            <option value="Slider">Slider</option>
+            <option value="Change-up">Change-up</option>
+            <option value="Knuckle">Knuckle</option>
+        </select><br>
+
+        <label for="starting">Starter:</label><br>
+        <input type="checkbox" name="starting" id="starting"><br>
+
+        <button type="submit">Create Pitcher</button>
+    </form>
+</body>
+</html>

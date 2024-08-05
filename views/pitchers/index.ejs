@@ -8,5 +8,15 @@
 <body>
     <%- include('../partials/_navbar.ejs') %>
     <h1>Pitchers</h1>
+    <ul>
+        <% populatedPitchers.forEach(pitcher => { %>
+         <li>
+            <a href="/pitchers/<%= pitcher._id %>"><%= pitcher.name %></a>
+         </li>
+        <% }) %>
+    </ul>
+    <button type="submit">
+        <a href="/pitchers/new">Create a Pitcher</a>
+    </button>
 </body>
 </html>
