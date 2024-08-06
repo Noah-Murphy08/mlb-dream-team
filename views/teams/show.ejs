@@ -50,5 +50,14 @@
     <button type="submit">
         <a href="/players/new">Create a Position Player</a>
     </button>
+    <button type="submit">
+        <a href="/pitchers/new">Create a Pitcher</a>
+    </button>
+
+    <% if (team.owner._id.equals(user._id)) { %>
+        <form action="/teams/<%= team._id %>?_method=DELETE" method="POST">
+            <button type="submit">Delete Team</button>
+        </form>
+    <% } %>
 </body>
 </html>

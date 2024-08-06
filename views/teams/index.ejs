@@ -21,9 +21,9 @@
      <h2>My Teams</h2>
      <ul>
         <% userTeams.forEach(team => { %>
-         <li>
-            The <a href="/teams/<%= team._id %>"><%= team.city %> <%= team.name %></a> created by <%= team.owner.username %>
-         </li>
+            <li>
+                The <a href="/teams/<%= team._id %>"><%= team.city %> <%= team.name %></a> created by <%= team.owner.username %>
+            </li>
         <% }) %>
      </ul>
     <% } else { %>

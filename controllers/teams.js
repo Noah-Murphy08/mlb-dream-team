@@ -69,6 +69,7 @@ router.get('/:teamId', async (req, res) => {
             benchPlayers,
             startingPitchers,
             benchPitchers,
+            user: req.session.user,
         })
     } catch (error) {
         console.log(error);
@@ -82,6 +83,17 @@ router.post('/', async (req, res) => {
         newTeam.owner = req.session.user._id;
         await newTeam.save();
         res.redirect('/teams');
+    } catch (error) {
+        console.log(error);
+        res.redirect('/');
+    }
+})
+
+router.delete('/:teamId', async (req, res) => {
+    try {
+        const usedTeam = await Team.findById(req.params.teamId);
+        await usedTeam.deleteOne();
+        res.redirect('/teams')
     } catch (error) {
         console.log(error);
         res.redirect('/');
