@@ -58,6 +58,9 @@
         <form action="/teams/<%= team._id %>?_method=DELETE" method="POST">
             <button type="submit">Delete Team</button>
         </form>
+        <button type="submit">
+            <a href="/teams/<%= team._id %>/edit">Edit this Team</a>
+        </button>
     <% } %>
 </body>
 </html>

@@ -77,6 +77,35 @@ router.get('/:teamId', async (req, res) => {
     }
 })
 
+router.get('/:teamId/edit', async (req, res) => {
+    try {
+        const players = await Player.find({});
+        const pitchers = await Pitcher.find({});
+        const currentTeam = await Team.findById(req.params.teamId);
+        res.render('teams/edit.ejs', {
+            team: currentTeam,
+            players,
+            pitchers,
+        })
+    } catch (error) {
+        console.log('error');
+        res.redirect('/');
+    }
+})
+
+router.put('/:teamId', async (req, res) => {
+    try {
+        const players = await Player.find({});
+        const pitchers = await Pitcher.find({});
+        const currentTeam = await Team.findById(req.params.teamId);
+        await currentTeam.updateOne(req.body);
+        res.redirect('/teams')
+    } catch (error) {
+        console.log(error);
+        res.redirect('/');
+    }
+})
+
 router.post('/', async (req, res) => {
     try {
         const newTeam = new Team(req.body);

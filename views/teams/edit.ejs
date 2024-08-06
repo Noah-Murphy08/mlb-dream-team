@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Team</title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>Edit Team</h1>
+    <form action="/teams/<%= team._id %>?_method=PUT" method="POST">
+        <label for="name">Name:</label><br>
+        <input value="<%= team.name %>" type="text" name="name" id="name"><br>
+
+        <label for="city">City:</label><br>
+        <input value="<%= team.city %>" type="text" name="city" id="city"><br>
+
+        <label for="stadium">Stadium:</label><br>
+        <input value="<%= team.stadium %>" type="text" name="stadium" id="stadium"><br>
+
+        <label for="players">Players:</label><br>
+        <select name="players" id="players" multiple>
+            <% players.forEach(player => { %>
+             <option value="<%= player._id %>" <%= team.players.includes(player._id) ? "selected" : "" %>><%= player.name %> (<%= player.position %>)</option>
+            <% }) %>
+        </select><br>
+
+        <label for="pitchers">Pitchers:</label><br>
+        <select name="pitchers" id="pitchers" multiple>
+            <% pitchers.forEach(pitcher => { %>
+             <option value="<%= pitcher._id %>" <%= team.pitchers.includes(pitcher._id) ? "selected" : "" %>><%= pitcher.name %></option>
+            <% }) %>
+        </select><br>
+
+        <button type="submit">Edit Team</button>
+    </form>
+</body>
+</html>
