@@ -42,6 +42,34 @@ router.get('/:playerId', async (req, res) => {
     }
 })
 
+router.get('/:playerId/edit', async (req, res) => {
+    try{
+        const currentPlayer = await Player.findById(req.params.playerId);
+        res.render('players/edit.ejs', {
+            player: currentPlayer,
+        })
+    } catch (error) {
+        console.log(error);
+        res.redirect('/');
+    }
+})
+
+router.put('/:playerId', async (req, res) => {
+    try {
+        if (req.body.starting === 'on') {
+            req.body.starting = true;
+        } else {
+            req.body.starting = false;
+        }
+        const currentPlayer = await Player.findById(req.params.playerId);
+        await currentPlayer.updateOne(req.body);
+        res.redirect('/teams')
+    } catch (error) {
+        console.log(error);
+        res.redirect('/');
+    }
+})
+
 router.post('/', async (req, res) => {
     try {
         if (req.body.starting === 'on') {

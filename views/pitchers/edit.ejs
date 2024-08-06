@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit <%= pitcher.name %></title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>Edit <%= pitcher.name %></h1>
+    <form action="/pitchers/<%= pitcher._id %>?_method=PUT" method="POST">
+        <label for="name">Name:</label><br>
+        <input value="<%= pitcher.name %>" type="text" name="name" id="name"><br>
+
+        <label for="throws">Throws:</label><br>
+        <select name="throws" id="throws">
+            <option value="Left" <%= pitcher.throws === "Left" ? "selected" : "" %>>Left</option>
+            <option value="Right" <%= pitcher.throws === "Right" ? "selected" : "" %>>Right</option>
+        </select><br>
+
+
+        <label for="pitches">Types of Pitches Thrown:</label><br>
+        <select name="pitches" id="pitches" multiple>
+            <option value="Fastball" <%= pitcher.pitches === "Fastball" ? "selected" : "" %>>Fastball</option>
+            <option value="Curveball" <%= pitcher.pitches === "Curveball" ? "selected" : "" %>>Curveball</option>
+            <option value="Slider" <%= pitcher.pitches === "Slider" ? "selected" : "" %>>Slider</option>
+            <option value="Change-up" <%= pitcher.pitches === "Change-up" ? "selected" : "" %>>Change-up</option>
+            <option value="Knuckle" <%= pitcher.pitches === "Knuckle" ? "selected" : "" %>>Knuckle</option>
+        </select><br>
+
+        <label for="starting">Starter:</label><br>
+        <input type="checkbox" name="starting" id="starting" <% if (pitcher.starting) { %>checked<% } %>><br>
+
+        <button type="submit">Edit Pitcher</button>
+    </form>
+</body>
+</html>

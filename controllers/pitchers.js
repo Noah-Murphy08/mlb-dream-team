@@ -42,6 +42,34 @@ router.get('/:pitcherId', async (req, res) => {
     }
 })
 
+router.get('/:pitcherId/edit', async (req, res) => {
+    try {
+        const currentPitcher = await Pitcher.findById(req.params.pitcherId);
+        res.render('pitchers/edit.ejs', {
+            pitcher: currentPitcher,
+        })
+    } catch (error) {
+        console.log(error);
+        res.redirect('/')
+    }
+})
+
+router.put('/:pitcherId', async (req, res) => {
+    try {
+        if (req.body.starting === 'on') {
+            req.body.starting = true;
+        } else {
+            req.body.starting = false;
+        }
+        const currentPitcher = await Pitcher.findById(req.params.pitcherId);
+        await currentPitcher.updateOne(req.body)
+        res.redirect('/teams')
+    } catch (error) {
+        console.log(error);
+        res.redirect('/');
+    }
+})
+
 router.post('/', async (req, res) => {
     try {
         if (req.body.starting === 'on') {
