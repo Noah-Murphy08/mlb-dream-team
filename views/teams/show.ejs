@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= team.city %> <%= team.name %></title>
+</head>
+<body>
+    <%- include('../partials/_navbar.ejs') %>
+    <h1>The <%= team.city %> <%= team.name %> by <%= team.owner.username %></h1>
+    <p>Name: <%= team.name %></p>
+    <p>City: <%= team.city %></p>
+    <p>Stadium: <%= team.stadium %></p>
+    
+    <% for (let position in starters) { %>
+        <h3><%= position %>: </h3>
+        <p>
+            <a href="/players/<%= starters[position]._id %>"><%= starters[position].name %></a>
+        </p>
+    <% } %>
+
+    <% if (outfielders.length > 0) { %>
+     <h3>Outfield:</h3>
+     <% outfielders.forEach(outfielder => { %>
+      <p><a href="/players/<%= outfielder._id %>"><%= outfielder.name %></a></p>
+     <% }) %>
+    <% } %>
+
+    <% if (startingPitchers.length > 0) { %>
+     <h3>Starting Pitcher:</h3>
+     <% startingPitchers.forEach(pitcher => { %>
+      <p><a href="/pitchers/<%= pitcher._id %>"><%= pitcher.name %></a></p>
+     <% }) %>
+    <% } %>
+
+    <% if (benchPlayers.length > 0) { %>
+     <h3>Bench:</h3>
+     <% benchPlayers.forEach(player => { %>
+        <p><a href="/players/<%= player._id %>"><%= player.name %></a> (<%= player.position %>)</p>
+     <% }) %>
+    <% } %>
+
+    <% if (benchPitchers.length > 0) { %>
+     <h3>Bullpen:</h3>
+     <% benchPitchers.forEach(pitcher => { %>
+      <p><a href="/pitchers/<%= pitcher._id %>"><%= pitcher.name %></a></p>
+     <% }) %>
+    <% } %>
+
+    <button type="submit">
+        <a href="/players/new">Create a Position Player</a>
+    </button>
+</body>
+</html>

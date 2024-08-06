@@ -8,8 +8,37 @@
 <body>
     <%- include('../partials/_navbar.ejs') %>
     <h1>All Teams</h1>
+
+    <ul>
+        <% populatedTeams.forEach(team => { %>
+         <li>
+            The <a href="/teams/<%= team._id %>"><%= team.city %> <%= team.name %></a> created by <%= team.owner.username %>
+         </li>
+        <% }) %>
+    </ul>
+
+    <% if (userTeams.length > 0) { %>
+     <h2>My Teams</h2>
+     <ul>
+        <% userTeams.forEach(team => { %>
+         <li>
+            The <a href="/teams/<%= team._id %>"><%= team.city %> <%= team.name %></a> created by <%= team.owner.username %>
+         </li>
+        <% }) %>
+     </ul>
+    <% } else { %>
+        <h2>My Teams</h2>
+        <p>You have no teams yet!</p>
+    <% } %>
+
     <button type="submit">
         <a href="/players/new">Create a Position Player</a>
+    </button>
+    <button type="submit">
+        <a href="/pitchers/new">Create a Pitcher</a>
+    </button>
+    <button type="submit">
+        <a href="/teams/new">Create a New Team</a>
     </button>
 </body>
 </html>
