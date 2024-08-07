@@ -1,19 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/style.css" />
-    <title><%= pitcher.name %></title>
+    <title>
+        <%= pitcher.name %>
+    </title>
 </head>
+
 <body>
     <%- include('../partials/_navbar.ejs') %>
-    <h1><%= pitcher.name %> Info</h1>
-    <p>Throws: <%= pitcher.throws %></p>
-    <p>Types of pitches <%= pitcher.name %> can throw: <%= pitcher.pitches %></p>
-    <p>Starter: <%= pitcher.starting %></p>
-    <button type="submit">
-        <a href="/pitchers/<%= pitcher._id %>/edit">Edit <%= pitcher.name %></a>
-    </button>
+        <div class="pitcher-p-cont">
+            <h1>
+                <%= pitcher.name %> Info
+            </h1>
+            <p>Throws: <%= pitcher.throws %>
+            </p>
+            <p>Types of pitches <%= pitcher.name %> can throw: <%= pitcher.pitches %>
+            </p>
+            <p>Starter: <%= pitcher.starting %>
+            </p>
+        </div>
+        <div class="edit-btn">
+            <button type="submit">
+                <a href="/pitchers/<%= pitcher._id %>/edit">Edit <%= pitcher.name %></a>
+            </button>
+        </div>
 </body>
+
 </html>

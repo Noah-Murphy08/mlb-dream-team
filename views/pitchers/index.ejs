@@ -1,23 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>View Pitchers</title>
 </head>
+
 <body>
     <%- include('../partials/_navbar.ejs') %>
-    <h1>Pitchers</h1>
-    <ul>
-        <% populatedPitchers.forEach(pitcher => { %>
-         <li>
-            <a href="/pitchers/<%= pitcher._id %>"><%= pitcher.name %></a>
-         </li>
-        <% }) %>
-    </ul>
-    <button type="submit">
-        <a href="/pitchers/new">Create a Pitcher</a>
-    </button>
+        <div class="player-size">
+            <h1>Pitchers</h1>
+            <ul>
+                <% populatedPitchers.forEach(pitcher=> { %>
+                    <li>
+                        <a href="/pitchers/<%= pitcher._id %>">
+                            <%= pitcher.name %>
+                        </a>
+                    </li>
+                    <% }) %>
+            </ul>
+        </div>
+        <div class="create-btn-idx">
+            <button type="submit">
+                <a href="/pitchers/new">Create a Pitcher</a>
+            </button>
+        </div>
 </body>
+
 </html>

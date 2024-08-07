@@ -16,6 +16,7 @@ body {
 
 a {
     text-decoration: none;
+    color: rgb(76, 0, 197);
 }
 
 div.welcome {
@@ -97,25 +98,11 @@ button {
     cursor: pointer;
     border: none;
     border-radius: 7px;
-    color: brown;
+    color: rgb(76, 0, 197);
     background-color: rgb(255, 242, 55);
     padding: 7px 17px;
     margin: 7px 0;
 }
-
-/* .team-index-btn {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: flex-start;
-    width: 20%;
-    margin: 5px 0;
-    border-radius: 0;
-    font-size: small;
-} */
-
-/* div.team-idx-layout {
-    display: inline-block;
-} */
 
 div.checkbox {
     display: flex;
@@ -135,4 +122,100 @@ select {
 
 form {
     background-color: rgb(92, 220, 230);
+}
+
+div.team-showpg-form > form {
+    width: 0;
+}
+
+div.tmshowpg-allbtns {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.tmshowpg-allbtns a, .tmshowpg-allbtns button {
+    display: block;
+    text-align: center;
+    padding: 5px 5px;
+    border: none;
+}
+
+.del-btn-team-show {
+    border: 10px;
+}
+
+.pitcher-p-cont {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.pitcher-p-cont p {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+}
+
+.pitcher-p-cont h1 {
+    display: flex;
+    justify-content: center;
+    font-size: 50px;
+}
+
+.edit-btn {
+    display: flex;
+    justify-content: center;
+}
+
+.create-btn-idx {
+    width: 10%;
+}
+
+.player-size a {
+    font-size: 25px;
+}
+
+.player-size li {
+    font-size: 25px;
+}
+
+.player-size h1 {
+    font-size: 40px;
+}
+
+.team-idx-layout {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.team-idx-head h1 {
+    font-size: 40px;
+}
+
+.team-idx-head h2 {
+    font-size: 35px;
+}
+
+.team-idx-head li {
+    font-size: 25px;
+}
+
+.team-idx-head p {
+    font-size: 25px;
+}
+
+.team-show h1 {
+    font-size: 40px;
+}
+
+.team-show h3 {
+    font-size: 30px;
+}
+
+.team-show p {
+    font-size: 20px;
 }

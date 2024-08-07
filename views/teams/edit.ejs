@@ -8,6 +8,9 @@
 </head>
 <body>
     <%- include('../partials/_navbar.ejs') %>
+    <div class="signin-page">
+        <div class="signin-cont-1">
+            <div class="signin-cont-2">
     <h1>Edit Team</h1>
     <form action="/teams/<%= team._id %>?_method=PUT" method="POST">
         <label for="name">Name:</label><br>
@@ -35,5 +38,8 @@
 
         <button type="submit">Edit Team</button>
     </form>
+</div>
+</div>
+</div>
 </body>
 </html>

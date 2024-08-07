@@ -1,68 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/stylesheets/style.css" />
-    <title><%= team.city %> <%= team.name %></title>
+    <title>
+        <%= team.city %>
+            <%= team.name %>
+    </title>
 </head>
+
 <body>
     <%- include('../partials/_navbar.ejs') %>
-    <h1>The <%= team.city %> <%= team.name %> by <%= team.owner.username %></h1>
-    <p>Name: <%= team.name %></p>
-    <p>City: <%= team.city %></p>
-    <p>Stadium: <%= team.stadium %></p>
-    
-    <% for (let position in starters) { %>
-        <h3><%= position %>: </h3>
-        <p>
-            <a href="/players/<%= starters[position]._id %>"><%= starters[position].name %></a>
-        </p>
-    <% } %>
+        <div class="team-show">
+            <h1>The <%= team.city %>
+                    <%= team.name %> by <%= team.owner.username %>
+            </h1>
+            <p>Name: <%= team.name %>
+            </p>
+            <p>City: <%= team.city %>
+            </p>
+            <p>Stadium: <%= team.stadium %>
+            </p>
 
-    <% if (outfielders.length > 0) { %>
-     <h3>Outfield:</h3>
-     <% outfielders.forEach(outfielder => { %>
-      <p><a href="/players/<%= outfielder._id %>"><%= outfielder.name %></a></p>
-     <% }) %>
-    <% } %>
+            <% for (let position in starters) { %>
+                <h3>
+                    <%= position %>:
+                </h3>
+                <p>
+                    <a href="/players/<%= starters[position]._id %>">
+                        <%= starters[position].name %>
+                    </a>
+                </p>
+                <% } %>
 
-    <% if (startingPitchers.length > 0) { %>
-     <h3>Starting Pitcher:</h3>
-     <% startingPitchers.forEach(pitcher => { %>
-      <p><a href="/pitchers/<%= pitcher._id %>"><%= pitcher.name %></a></p>
-     <% }) %>
-    <% } %>
+                    <% if (outfielders.length> 0) { %>
+                        <h3>Outfield:</h3>
+                        <% outfielders.forEach(outfielder=> { %>
+                            <p><a href="/players/<%= outfielder._id %>">
+                                    <%= outfielder.name %>
+                                </a></p>
+                            <% }) %>
+                                <% } %>
 
-    <% if (benchPlayers.length > 0) { %>
-     <h3>Bench:</h3>
-     <% benchPlayers.forEach(player => { %>
-        <p><a href="/players/<%= player._id %>"><%= player.name %></a> (<%= player.position %>)</p>
-     <% }) %>
-    <% } %>
+                                    <% if (startingPitchers.length> 0) { %>
+                                        <h3>Starting Pitcher:</h3>
+                                        <% startingPitchers.forEach(pitcher=> { %>
+                                            <p><a href="/pitchers/<%= pitcher._id %>">
+                                                    <%= pitcher.name %>
+                                                </a></p>
+                                            <% }) %>
+                                                <% } %>
 
-    <% if (benchPitchers.length > 0) { %>
-     <h3>Bullpen:</h3>
-     <% benchPitchers.forEach(pitcher => { %>
-      <p><a href="/pitchers/<%= pitcher._id %>"><%= pitcher.name %></a></p>
-     <% }) %>
-    <% } %>
-    
-    <% if (team.owner._id.equals(user._id)) { %>
-        <form action="/teams/<%= team._id %>?_method=DELETE" method="POST">
-            <button type="submit">Delete Team</button>
-        </form>
-        <button type="submit">
-            <a href="/teams/<%= team._id %>/edit">Edit this Team</a>
-        </button>
-    <% } %>
-    
-    <button type="submit">
-        <a href="/players/new">Create a Position Player</a>
-    </button>
-    <button type="submit">
-        <a href="/pitchers/new">Create a Pitcher</a>
-    </button>
+                                                    <% if (benchPlayers.length> 0) { %>
+                                                        <h3>Bench:</h3>
+                                                        <% benchPlayers.forEach(player=> { %>
+                                                            <p><a href="/players/<%= player._id %>">
+                                                                    <%= player.name %>
+                                                                </a> (<%= player.position %>)</p>
+                                                            <% }) %>
+                                                                <% } %>
+
+                                                                    <% if (benchPitchers.length> 0) { %>
+                                                                        <h3>Bullpen:</h3>
+                                                                        <% benchPitchers.forEach(pitcher=> { %>
+                                                                            <p><a href="/pitchers/<%= pitcher._id %>">
+                                                                                    <%= pitcher.name %>
+                                                                                </a></p>
+                                                                            <% }) %>
+                                                                                <% } %>
+        </div>
+        <div class="button-cont">
+            <div class="tmshowpg-allbtns">
+                <div class="team-showpg-form">
+                    <% if (team.owner._id.equals(user._id)) { %>
+
+                        <form action="/teams/<%= team._id %>?_method=DELETE" method="POST" class="del-btn-team-show">
+                            <button type="submit">Delete
+                                Team</button>
+                        </form>
+                        <button type="submit">
+                            <a href="/teams/<%= team._id %>/edit">Edit
+                                this Team</a>
+                        </button>
+                </div>
+                <% } %>
+
+                    <button type="submit">
+                        <a href="/players/new">Create
+                            a Position
+                            Player</a>
+                    </button>
+                    <button type="submit">
+                        <a href="/pitchers/new">Create
+                            a Pitcher</a>
+                    </button>
+            </div>
+        </div>
 
 </body>
+
 </html>
