@@ -1,11 +1,15 @@
 <nav>
     <% if (user) { %>
-        <a href="/teams">View Teams</a>
-        <a href="/players">View position players</a>
-        <a href="/pitchers">View pitchers</a>
-        <a href="/auth/sign-out">sign-out</a>
+        <div class="top-bar">
+            <a href="/teams">View Teams</a>
+            <a href="/players">View position players</a>
+            <a href="/pitchers">View pitchers</a>
+            <a href="/auth/sign-out">sign-out</a>
+        </div>
     <% } else { %>
-        <a href="/auth/sign-up">sign-up</a>
-        <a href="/auth/sign-in">sign-in</a>
+        <div class="top-bar">
+            <a href="/auth/sign-up">sign-up</a>
+            <a href="/auth/sign-in">sign-in</a>
+        </div>
     <% } %>
 </nav>

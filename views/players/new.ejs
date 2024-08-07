@@ -1,38 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <title>Create a new Position Player</title>
 </head>
+
 <body>
     <%- include('../partials/_navbar.ejs') %>
-    <h1>Create a New Position Player</h1>
-    <form action="/players" method="POST">
-        <label for="name">Name:</label><br>
-        <input type="text" name="name" id="name"><br>
+        <div class="signin-page">
+            <div class="signin-cont-1">
+                <div class="signin-cont-2">
+                    <h1>Create a New Position Player</h1>
+                    <form action="/players" method="POST">
+                        <label for="name">Name:</label><br>
+                        <input type="text" name="name" id="name"><br>
 
-        <label for="bats">Bats:</label><br>
-        <select name="bats" id="bats">
-            <option value="Left">Left</option>
-            <option value="Right">Right</option>
-            <option value="Switch">Switch</option>
-        </select><br>
+                        <label for="bats">Bats:</label><br>
+                        <select name="bats" id="bats">
+                            <option value="Left">Left</option>
+                            <option value="Right">Right</option>
+                            <option value="Switch">Switch</option>
+                        </select><br>
 
-        <label for="position">Position:</label><br>
-        <select name="position" id="position">
-            <option value="first-base">first-base</option>
-            <option value="second-base">second-base</option>
-            <option value="thrid-base">thrid-base</option>
-            <option value="short stop">short stop</option>
-            <option value="catcher">catcher</option>
-            <option value="out-field">out-field</option>
-        </select><br>
-
-        <label for="starting">Starter:</label><br>
-        <input type="checkbox" name="starting" id="starting"><br>
-
-        <button type="submit">Add Position Player</button>
-    </form>
+                        <label for="position">Position:</label><br>
+                        <select name="position" id="position">
+                            <option value="first-base">first-base</option>
+                            <option value="second-base">second-base</option>
+                            <option value="thrid-base">thrid-base</option>
+                            <option value="short stop">short stop</option>
+                            <option value="catcher">catcher</option>
+                            <option value="out-field">out-field</option>
+                        </select><br>
+                        <div class="checkbox">
+                            <label for="starting">Starter:</label><br>
+                            <input type="checkbox" name="starting" id="starting"><br>
+                        </div>
+                        
+                        <button type="submit">Add Position Player</button>
+                    </form>
+                </div>
+            </div>
+        </div>
 </body>
+
 </html>

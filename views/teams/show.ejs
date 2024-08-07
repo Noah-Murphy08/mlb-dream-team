@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
     <title><%= team.city %> <%= team.name %></title>
 </head>
 <body>
@@ -46,14 +47,7 @@
       <p><a href="/pitchers/<%= pitcher._id %>"><%= pitcher.name %></a></p>
      <% }) %>
     <% } %>
-
-    <button type="submit">
-        <a href="/players/new">Create a Position Player</a>
-    </button>
-    <button type="submit">
-        <a href="/pitchers/new">Create a Pitcher</a>
-    </button>
-
+    
     <% if (team.owner._id.equals(user._id)) { %>
         <form action="/teams/<%= team._id %>?_method=DELETE" method="POST">
             <button type="submit">Delete Team</button>
@@ -62,5 +56,13 @@
             <a href="/teams/<%= team._id %>/edit">Edit this Team</a>
         </button>
     <% } %>
+    
+    <button type="submit">
+        <a href="/players/new">Create a Position Player</a>
+    </button>
+    <button type="submit">
+        <a href="/pitchers/new">Create a Pitcher</a>
+    </button>
+
 </body>
 </html>
