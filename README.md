@@ -37,3 +37,7 @@ in this app, a user will create an account with a username and password. Once cr
 4. Select your starting line-up by editing your chosen player.
 5. Show off your incredible team!
 
+## Upcoming Features
+ - Add stats to players and pitchers.
+ - head to head simulation.
+ - record real time data from simulations that will populate the added statlines.
