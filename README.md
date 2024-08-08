@@ -6,7 +6,7 @@
 
 # MLB Dream Team App
 **Created by Noah Murphy**
-## [CLICK TO PLAY](deployment url here)
+## [CLICK TO PLAY](https://mlb-dream-team-e78ac4dad257.herokuapp.com/)
 
 </div>
 
