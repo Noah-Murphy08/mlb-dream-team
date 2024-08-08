@@ -11,14 +11,14 @@
 </div>
 
 ## :pencil: Description
-in this app, a user will create an account with a username and password. Once created, the user will be able to build their own person baseball team. You can name the team whatever you like, and they can be from any place in the world! You will also be able to name the stadium they play in! Building the roster will be the next step. You can use real players or even ficticious people from your favorite show or movie. Each position will have one starter (other than outfield which has three). The rest of the player will be placed on your "bench" or "bullpen" depending on if they are a position player or a pitcher.
+in this app, a user will create an account with a username and password. Once created, the user will be able to build their own person baseball team. You can name the team whatever you like, and they can be from any place in the world! You will also be able to name the stadium they play in! Building the roster will be the next step. You can use real players or even ficticious people from your favorite show or movie. Each position will have one starter (other than outfield which has three). The rest of the players will be placed on your "bench" or "bullpen" depending on if they are a position player or a pitcher.
 
   ## :camera_flash: Screenshots  
 
   |   Description | Screenshot | 
   |:-------------:| -----------|
-  | <h3>All Teams Page</h3> | <img alt="Main team page" src="https://imgur.com/ZCzDHTO.png" width="700">
-  | <h3 align="center">Team Info Page</h3> | <img alt="Team info page" src="https://imgur.com/JBB6xUL.png"> | 
+  | <h3>All Teams Page</h3> | <img alt="Main team page" src="https://imgur.com/W4zilL4.png" width="700">
+  | <h3 align="center">Team Info Page</h3> | <img alt="Team info page" src="https://imgur.com/oqUbySm.png"> | 
 
 ## :computer: Technologies Used
 
@@ -29,4 +29,11 @@ in this app, a user will create an account with a username and password. Once cr
 ![HTML5](https://img.shields.io/badge/-HTML5-05122A?style=flat&logo=html5)
 ![CSS3](https://img.shields.io/badge/-CSS-05122A?style=flat&logo=css3)
 ![Trello](https://img.shields.io/badge/-Trello-05122A?style=flat&logo=trello)
+
+## instructions
+1. Sign up!
+2. Create a team.
+3. If your favorite player, TV show, or movie character is missing, add them in!
+4. Select your starting line-up by editing your chosen player.
+5. Show off your incredible team!
 
