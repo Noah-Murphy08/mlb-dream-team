@@ -6,7 +6,7 @@
 
 # MLB Dream Team App
 **Created by Noah Murphy**
-## [CLICK TO PLAY](https://mlb-dream-team-e78ac4dad257.herokuapp.com/)
+## [CLICK TO PLAY](https://mlb-dream-team-e78ac4dad257.herokuapp.com)
 
 </div>
 
@@ -36,6 +36,9 @@ in this app, a user will create an account with a username and password. Once cr
 3. If your favorite player, TV show, or movie character is missing, add them in!
 4. Select your starting line-up by editing your chosen player.
 5. Show off your incredible team!
+
+## Planning Materials
+[trello](https://trello.com/invite/b/66ab135006ea779761278af0/ATTI8de012faf28afcb819d47f7af36a56e15AEC54DC/noahm)
 
 ## Upcoming Features
  - Add stats to players and pitchers.
